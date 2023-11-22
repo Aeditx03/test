@@ -66,6 +66,7 @@ a {
     margin: 0 3px;
     text-decoration: none;
     position: relative;
+    cursor: pointer;
 }
 
 .nryt a::after {
@@ -213,9 +214,9 @@ a {
     width: 90%;
 }
 
-.about-nav a:hover::after {
+/* .about-nav a:hover::after {
     width: 90%;
-}
+} */
 
 
 

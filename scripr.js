@@ -71,3 +71,9 @@ function toggleWidthnav(element) {
     wlcm.classList.add('active');
     console.log(sec1);
 }
+
+
+// #####################################
+
+Shery.mouseFollower();
+Shery.makeMagnet(".magnet");
