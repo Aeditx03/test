@@ -3,6 +3,9 @@ let abtBtn = document.querySelector(".about-btn")
 let dldBtn_outer = document.querySelector(".downloadBtn")
 let file_name = document.querySelector(".file-name")
 let about_nav = document.querySelector(".about-nav")
+let links = document.querySelectorAll('.links a')
+let abt_chnl = document.querySelector('.abt-chnl')
+let timer = 0
 // adding under in home btn at first 
 homeBtn.classList.add('active');
 
@@ -13,6 +16,7 @@ abtBtn.addEventListener("click", () => {
     dldBtn_outer.style.display = "none";
     file_name.style.display = "none";
     about_nav.style.display = "block"
+
 
 })
 // when clicking home
@@ -26,19 +30,29 @@ homeBtn.addEventListener("click", () => {
 
 
 // btn animations 
-let links = document.querySelectorAll('.links a')
 let dldBtn = document.querySelectorAll('.downloadBtn button')
-console.log(links);
-let timer = 0
+
+timer = 0
 links.forEach((i) => {
-    i.style.animation = `linksBtnAn 2s ease ${timer}s infinite`
+    i.style.animation = `linksBtnAn 2s ease ${timer}s infinite `
+
     timer += 0.3
 })
 dldBtn.forEach((i) => {
-    i.style.animation = `linksBtnAn 2s ease ${timer}s infinite`
+    i.style.animation = `strtLoad 1s ease ${timer}s forwards, linksBtnAn 2s ease ${timer}s infinite `
     timer += 0.3
 })
+timer = 0
 
+abt_chnl.addEventListener("click", () => {
+    console.log(timer, " hii");
+    links.forEach((i) => {
+        i.style.animation = `linksBtnAn 2s ease ${timer}s infinite , strtLoad 1s ease ${timer}s forwards`
+
+        timer += 0.3
+    })
+    timer = 0
+})
 
 
 
@@ -77,3 +91,6 @@ function toggleWidthnav(element) {
 
 Shery.mouseFollower();
 Shery.makeMagnet(".magnet");
+
+// #####################################
+
